@@ -1,15 +1,9 @@
-message(STATUS "Selected Raw LLVM Toolchain")
-message(STATUS "Toolchain location: " ${CMAKE_CURRENT_LIST_DIR})
+set(CMAKE_IS_INIT_CACHE_INVOCATION TRUE)
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR})
-include(SetLLVMLinker)
+#TODO[cmake]: pass -triple arm-none-eabi -tune-cpu cortex-m3 options to llvm toolchain loader
 
-
-set(CMAKE_SYSTEM_NAME None)
-
-set(CMAKE_C_COMPILER raw-clang)
-set(CMAKE_CXX_COMPILER raw-clang++)
-
-
-
+# On first run it disables double inclusion for this toolchain file
 set(CMAKE_TOOLCHAIN_FILE FALSE)
+
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_CUSTOM_CODE "include(${CMAKE_CURRENT_LIST_DIR}/LoadLLVMToolchain.cmake)")

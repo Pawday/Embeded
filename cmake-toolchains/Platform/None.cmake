@@ -1,1 +1,0 @@
-message(STATUS "Selected \"None\" cmake platform")
