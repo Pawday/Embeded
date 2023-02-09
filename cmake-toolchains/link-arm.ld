@@ -6,8 +6,8 @@ MEMORY
 
 SECTIONS
 {
-	.data ALIGN(0x0) : { *(.data) } > flash
-	.text 0x08000200: { *(.text) } > flash
+	.vector_table ALIGN(0x0) : { *(.data.VectorTable) } > flash
+	.text : { *(.text) } > flash
 
 	
 	/DISCARD/ :
