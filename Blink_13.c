@@ -1,5 +1,5 @@
-#include "register_def.h"
-
+#include "stm32_registers.h"
+#include "stm32_flags.h"
 
 /// GPIO (AFIO) configuration value
 /// for make port disconnected (open drain)

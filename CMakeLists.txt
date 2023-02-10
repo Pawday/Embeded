@@ -14,9 +14,11 @@ function(MakeFlashTarget Target)
 
     add_custom_target(
             ${Target}_FlashFirmware
-            COMMAND st-flash write ${TARGET_NAME}.bin 0x08000000
+            COMMAND st-flash --reset write ${TARGET_NAME}.bin 0x08000000
             WORKING_DIRECTORY ${TARGET_BUILD_DIR}
             DEPENDS ${TARGET_NAME}_MakeFirmware
+            COMMENT "Flashing ${Target}"
+            VERBATIM
     )
 
 endfunction()
@@ -30,7 +32,10 @@ function(MakeFirmwareTarget Target)
         ${TARGET_NAME}_MakeFirmware
         COMMAND llvm-objcopy -O binary ${TARGET_NAME} ${TARGET_NAME}.bin
         WORKING_DIRECTORY ${TARGET_BUILD_DIR}
+        COMMENT "Making binary firmware for ${Target}"
         DEPENDS ${Target}
+        BYPRODUCTS ${TARGET_NAME}.bin
+        VERBATIM
     )
 endfunction()
 

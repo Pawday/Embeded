@@ -28,10 +28,6 @@
 #define RCC_APB2ENR_ADDR (RCC_OFFSET_ADDR + 0x18)
 #define RCC_APB2ENR (CAST_RW RCC_APB2ENR_ADDR)[0]
 
-#define IOPAEN 0b00100
-#define IOPBEN 0b01000
-#define IOPCEN 0b10000
-
 
 
 //_____________________________________________________________
