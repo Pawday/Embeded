@@ -13,7 +13,7 @@
 
 void start(void);
 
-#define DAMMY_LOOP while(1){}
+#define STUB_LOOP while(1){}
 
 void ResetHandler(void)
 {
@@ -22,32 +22,32 @@ void ResetHandler(void)
 
 void NMI(void)
 {
-    DAMMY_LOOP
+    STUB_LOOP
 }
 
 void HardFault(void)
 {
-    DAMMY_LOOP
+    STUB_LOOP
 }
 
 void BusFault(void)
 {
-    DAMMY_LOOP
+    STUB_LOOP
 }
 
 void UsageFault(void)
 {
-    DAMMY_LOOP
+    STUB_LOOP
 }
 
 void MemoryManagementFault(void)
 {
-    DAMMY_LOOP
+    STUB_LOOP
 }
 
 void SVCall(void)
 {
-    DAMMY_LOOP
+    STUB_LOOP
 }
 
 void InterruptDummy(void)
@@ -57,12 +57,12 @@ void InterruptDummy(void)
 
 void PendSV(void)
 {
-    DAMMY_LOOP
+    STUB_LOOP
 }
 
 void SysTick(void)
 {
-    DAMMY_LOOP
+    STUB_LOOP
 }
 
 /// See page 35 of the stm32 PM0056 Rev 6
