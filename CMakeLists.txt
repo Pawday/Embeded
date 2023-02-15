@@ -39,8 +39,8 @@ function(MakeFirmwareTarget Target)
     )
 endfunction()
 
-add_library(Reset OBJECT Reset.c)
+add_library(VectorTable OBJECT VectorTable.c)
 
-add_executable(Blink_13 Blink_13.c)
-target_link_libraries(Blink_13 PRIVATE Reset)
+add_executable(Blink_13 Blink_13.c VectorTableStubs.c)
+target_link_libraries(Blink_13 PRIVATE VectorTable)
 MakeFlashTarget(Blink_13)

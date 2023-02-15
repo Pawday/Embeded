@@ -14,7 +14,7 @@ void naiveSleep(void)
     while (i > 0) {i--;}
 }
 
-void start(void)
+int main(void)
 {
 
     RCC_APB2ENR |= IOPCEN;
