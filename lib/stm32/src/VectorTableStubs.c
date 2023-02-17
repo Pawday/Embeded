@@ -1,4 +1,4 @@
-#include "VectorTable.h"
+#include <stm32/_VectorTable.h>
 
 #define STUB_LOOP while(1){}
 

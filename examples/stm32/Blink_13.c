@@ -1,5 +1,5 @@
-#include "stm32_registers.h"
-#include "stm32_flags.h"
+#include <stm32/stm32_registers.h>
+#include <stm32/stm32_flags.h>
 
 /// GPIO (AFIO) configuration value
 /// for make port disconnected (open drain)
@@ -7,12 +7,17 @@
 /// [link](https://st.com/resource/en/reference_manual/cd00171190-stm32f101xx-stm32f102xx-stm32f103xx-stm32f105xx-and-stm32f107xx-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf)
 #define IO_DISCONNECT_CONFIG 0x44444444
 
-
+// Making delay that way is a Horrible idea,
+// especially when our linker has LTO optimisations,
+// for now it works fine
+// TODO[example,lto]: disable LTO on this routine
 void naiveSleep(void)
 {
     int i = 100000;
     while (i > 0) {i--;}
 }
+
+// Imagine you need to compile the kervel on ported to WASM
 
 int main(void)
 {

@@ -17,7 +17,7 @@ set(CMAKE_CXX_COMPILER_FORCED TRUE)
 # TODO[cmake]: Expose triple selection for toolchain frontend
 # TODO[cmake]: Replace Determine<C,CXX>Compiler for todo below
 # TODO[cmake]: Implement triple selection validation
-set(CMAKE_C_COMPILE_OBJECT "<CMAKE_C_COMPILER> -cc1 -triple thumb-none-eabi -tune-cpu cortex-m3 <FLAGS> -emit-llvm-bc <DEFINES> <INCLUDES> -o <OBJECT> <SOURCE>")
+set(CMAKE_C_COMPILE_OBJECT "<CMAKE_C_COMPILER> -cc1 -triple thumb -tune-cpu cortex-m3 <FLAGS> -emit-llvm-bc <DEFINES> <INCLUDES> -o <OBJECT> <SOURCE>")
 
 include(${CMAKE_CURRENT_LIST_DIR}/SetLLVMLinker.cmake)
 

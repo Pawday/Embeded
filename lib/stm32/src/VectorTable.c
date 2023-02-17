@@ -1,4 +1,4 @@
-#include "VectorTable.h"
+#include <stm32/_VectorTable.h>
 
 #include <stdint.h>
 #include <stddef.h>

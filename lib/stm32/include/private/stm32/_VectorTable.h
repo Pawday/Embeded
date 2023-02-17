@@ -1,5 +1,6 @@
 #pragma once
 
+// TODO: make public vector table
 void NMI(void);
 void HardFault(void);
 void BusFault(void);
