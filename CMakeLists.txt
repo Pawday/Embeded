@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.21)
 
 project(Pwd_Embedded C)
 
+#TODO[cmake,external_tools]: determine st-flash location and deal with case when there is no st-flash
 function(MakeFlashTarget Target)
 
     get_property(TARGET_NAME TARGET ${Target} PROPERTY NAME)
@@ -42,5 +43,6 @@ endfunction()
 add_library(VectorTable OBJECT VectorTable.c)
 
 add_executable(Blink_13 Blink_13.c VectorTableStubs.c)
+target_compile_options(Blink_13 PRIVATE "-O0")
 target_link_libraries(Blink_13 PRIVATE VectorTable)
 MakeFlashTarget(Blink_13)
