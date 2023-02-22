@@ -50,7 +50,8 @@ What about **IDE** support?
 There is no way **Linux guys** think about it
 
 So, every manufacture makes its own IDE targeting specifically __this__ makefiles setup
-don even try to modify it
+
+Don't even try to modify it
 
 > #### What's the solution?
 [**CMake**](https://github.com/Kitware/CMake) — the build system generator
